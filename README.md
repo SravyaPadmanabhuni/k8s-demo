@@ -36,25 +36,25 @@ It includes a full CRUD API for managing customer data.
 git clone https://github.com/yourusername/customer-microservice.git
 cd customer-microservice
 
-### Kuberentes setup on the minikube
+# Kuberentes setup on the minikube
 minikube start
 
-### Apply Kubernetes configs
+# Apply Kubernetes configs
 kubectl apply -f k8s/postgres-secret.yaml
 kubectl apply -f k8s/postgres-deployment.yaml
 kubectl apply -f k8s/backend-deployment.yaml
 
-### Check pods and Service status
+# Check pods and Service status
 kubectl get pods
 kubectl get svc
 
-###Access the Application
+# Access the Application
 minikube ip
 kubectl get svc <applicationServiceName>
 http://<minikube-ip>:<NodePort>/api/v1/customers
 
-### Testing the API
+# Testing the API
 curl http://<minikube-ip>:<node-port>/api/v1/customers
 
-### Or perform doing tunneling
+# Or perform doing tunneling
 kubectl service <applicationServiceName> - it'll provide an IP.
